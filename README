@@ -6,36 +6,60 @@ Je souhaite signaler un problème concernant l'utilisation du périphérique UGR
 Voici un résumé des problèmes identifiés :
 
 1. Processus Espion - WifiAutoInstallSrv.exe 🕵️‍♂️💻
+
 Le fichier WifiAutoInstallSrv.exe fonctionne en arrière-plan sans notification explicite et envoie des données sensibles à un serveur externe lié à UGREEN. Ce processus s'exécute en permanence, même lorsque le périphérique n'est pas activement utilisé, ce qui indique un comportement de télémétrie intrusive. 📡💾
 
 2. Manipulation du Trafic Réseau - ARP Spoofing ⚠️🔐
+
 Lors de l'analyse de la table ARP de mon réseau local, j'ai détecté une anomalie avec l'adresse MAC 98:6e:e8:28:16:f4, associée à l'adresse IP 192.168.1.116, qui est l'adresse IP locale de mon périphérique UGREEN WiFi USB. Cela pourrait être un signe d'attaque ARP Spoofing, redirigeant le trafic réseau et exposant mes données à des risques de sécurité. 🚨🔓
 
 3. Perturbation du Réseau Local 🌐💥
+
 J'ai observé des déconnexions fréquentes, particulièrement lors de l'utilisation de jeux en ligne (comme Roblox). Cela semble être lié à une interférence du périphérique UGREEN ou de son processus WifiAutoInstallSrv.exe avec le réseau. 🎮❌
 
 🔍 Détails Techniques et Analyse :
+
 Méthodologie d'Analyse :
+
 Wireshark : Capture de paquets réseau montrant des envois réguliers de paquets ICMPv6 (Neighbor Advertisement) vers un serveur externe lié à UGREEN. 📊📡
+
 Table ARP : Utilisation de la commande arp -a pour repérer des incohérences dans la table ARP, où l'adresse MAC 98:6e:e8:28:16:f4 est associée à l'adresse IP 192.168.1.116 (peripheral UGREEN). 🔍💻
+
 Gestionnaire de Tâches : Identification du processus suspect WifiAutoInstallSrv.exe qui s'exécute en arrière-plan. ⚙️🔧
 Logs et Fichiers Fournis :
 Wireshark Capture (.pcapng) montrant les paquets ICMPv6. 🗂️
+
 Table ARP avec les anomalies d'adresse MAC et IP. 📜
+
 Capture d'écran du Gestionnaire de tâches avec le processus WifiAutoInstallSrv.exe en cours. 📸
+
 🎯 Objectifs de ce Signalement :
+
 Protéger la Vie Privée : Sensibiliser sur des pratiques de télémétrie non autorisées affectant la vie privée des utilisateurs. 🚨🔒
+
 Analyser les Risques de Sécurité : Identifier les risques d'attaque ARP Spoofing qui pourraient compromettre la sécurité des réseaux locaux. 🔐💥
+
 Améliorer la Stabilité du Réseau : Éviter les déconnexions fréquentes causées par des interférences du périphérique ou du logiciel UGREEN. 🌐🔧
+
 💡 Propositions et Recommandations :
 Désactivation de WifiAutoInstallSrv.exe : Désactiver ou supprimer le processus WifiAutoInstallSrv.exe pour stopper l'envoi non autorisé de données. 🚫🖥️
+
 Surveillance des Réseaux : Utiliser des outils de détection d'ARP Spoofing pour sécuriser les réseaux et éviter les interceptions de données. 🔒🛡️
+
 Audit de Sécurité : Réaliser un audit approfondi pour garantir qu'aucune donnée privée n'est transmise sans consentement. 🔍⚠️
+
 🖥️ Contexte et Environnement :
+
 Périphérique utilisé : UGREEN WiFi USB 🌐
+
 Logiciel impliqué : WifiAutoInstallSrv.exe 📡
+
 Problèmes rencontrés : Télémétrie intrusive, manipulation du réseau, déconnexions fréquentes 🔌❌
+
 Outils d'analyse utilisés : Wireshark, Gestionnaire de tâches, arp -a 🛠️🔧
+
 Système d'exploitation : Windows 10 💻
+
 Conclusion 🎯 :
+
 Je soumets ce signalement pour alerter la communauté sur les risques potentiels liés à l'utilisation des périphériques UGREEN WiFi USB et de leur logiciel associé. Ce dossier vise à encourager une analyse approfondie, à prendre des mesures correctives et à protéger la confidentialité et la sécurité des utilisateurs. 🚨🔐
